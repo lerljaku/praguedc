@@ -35,7 +35,7 @@ def export_bodu(file_path: str):
     with open(tmp.name, 'r') as f:
         readCSV = csv.reader(f, delimiter=',', quotechar='"')
         for row in list(readCSV)[headers_count:]:
-            player_name = row[0].strip()
+            player_name = row[14].strip()
             if player_name:
                 players.append(Player(name=player_name))
 
@@ -64,7 +64,7 @@ def export_bodu(file_path: str):
             print(f"{score.name};{score.points}")
             scores.pop(player.name)
         else:
-            print(f"{player.name};")
+            print(f"{player.name}; ")
     
     for player_name in scores:
         score = scores[player_name]
