@@ -82,6 +82,9 @@ def export_bodu(file_path: str):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    file_path = args[0]
+    if len(args) > 0:
+        file_path = args[0]
+    else:
+        file_path = input("enter path to the standings pdf:")
     export_bodu(file_path=file_path)
 
